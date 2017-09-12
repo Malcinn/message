@@ -1,5 +1,7 @@
 package com.company.message.dao.model;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
+
 /**
  * Model Class for DAO pattern (DAO - Data Access Object).
  * 
@@ -39,4 +41,17 @@ public class Message {
 		this.body = body;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (obj instanceof Message) {
+			Message message = (Message) obj;
+			if (this.getId().equals(message.getId())) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

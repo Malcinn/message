@@ -11,9 +11,9 @@ import com.company.message.model.MessageDTO;
  */
 public interface IMessageAbstractFactory {
 
-	public Message createMessage(String title, String body);
+	public Message createMessage(String id, String title, String body);
 
-	public MessageDTO createMessageDTO(String title, String body);
+	public MessageDTO createMessageDTO(String id, String title, String body);
 
 	public Message createMessage(MessageDTO messageDTO);
 

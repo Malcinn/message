@@ -4,7 +4,7 @@ import com.company.message.exceptions.MessageNotExistException;
 import com.company.message.exceptions.MessageNotFoundException;
 import com.company.message.model.MessageDTO;
 
-public interface MessageDAOFactory {
+public interface IMessageDAO {
 
 	/**
 	 * Method insert object to data source.
@@ -31,7 +31,7 @@ public interface MessageDAOFactory {
 	 *            message id.
 	 * @return {@link MessageDTO} if message exist in data source. Either null.
 	 */
-	public MessageDTO findMessage(String id) throws MessageNotExistException;
+	public MessageDTO findMessage(String id) throws MessageNotFoundException;
 
 	/**
 	 * Method updates message

@@ -1,5 +1,7 @@
 package com.company.message.model;
 
+import com.company.message.dao.model.Message;
+
 /**
  * Model Class for DTO pattern. (DTO - Data Transfer Object)
  * 
@@ -41,5 +43,19 @@ public class MessageDTO {
 	@Override
 	public String toString() {
 		return "[id: " + id + ", title: " + title + ", body: " + body + "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+		if (obj instanceof MessageDTO) {
+			MessageDTO messageDTO = (MessageDTO) obj;
+			if (this.getId().equals(messageDTO.getId())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }
