@@ -16,7 +16,7 @@ import com.company.message.exceptions.MessageNotFoundException;
 import com.company.message.model.MessageDTO;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = { "../../../Beans.xml" })
+@ContextConfiguration(locations = { "classpath:Beans.xml" })
 public class SimpleMessageDAOTest {
 
 	@Autowired

@@ -19,6 +19,7 @@
 		<module>message-api</module>
 		<module>message-core</module>
 		<module>message-cli</module>
+		<module>message-rest-server</module>
 	</modules>
 
 	<dependencies>
