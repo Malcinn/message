@@ -1,7 +1,5 @@
 package com.company.message.model;
 
-import com.company.message.dao.model.Message;
-
 /**
  * Model Class for DTO pattern. (DTO - Data Transfer Object)
  * 
@@ -15,6 +13,17 @@ public class MessageDTO {
 	private String title;
 
 	private String body;
+
+	public MessageDTO() {
+		super();
+	}
+
+	public MessageDTO(String id, String title, String body) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.body = body;
+	}
 
 	public String getId() {
 		return id;

@@ -5,6 +5,10 @@
 	xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<bean id="consoleManager" class="com.company.message.services.ConsoleManager"
+		autowire="byName">
+	</bean>
+
 	<bean id="iMessageAbstractFactory" class="com.company.message.SimpleMessageAbstractFactory"
 		autowire="byName">
 	</bean>

@@ -12,15 +12,15 @@ public class MessageDAOUtil {
 	private static final int GREATER_THAN = 1;
 
 	public static String getNextId(List<Message> messages) {
-		if (null != messages) {
+		if (null != messages && !messages.isEmpty()) {
 			BigDecimal maxId = new BigDecimal(FIRST_ID);
 			for (Message message : messages) {
 				BigDecimal currentId = new BigDecimal(message.getId());
-				if (currentId.compareTo(maxId) > GREATER_THAN) {
+				if (currentId.compareTo(maxId) == GREATER_THAN) {
 					maxId = currentId;
 				}
 			}
-			return maxId.toString();
+			return maxId.add(new BigDecimal(1)).toString();
 		}
 		return FIRST_ID;
 	}

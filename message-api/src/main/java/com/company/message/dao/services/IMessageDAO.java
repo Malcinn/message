@@ -1,5 +1,7 @@
 package com.company.message.dao.services;
 
+import java.util.List;
+
 import com.company.message.exceptions.MessageNotExistException;
 import com.company.message.exceptions.MessageNotFoundException;
 import com.company.message.model.MessageDTO;
@@ -41,4 +43,11 @@ public interface IMessageDAO {
 	 * @return true if message successfully updated. Either false.
 	 */
 	public boolean updateMessage(MessageDTO messageDTO) throws MessageNotExistException;
+
+	/**
+	 * Methods returns all messages from DAO
+	 * 
+	 * @return List of {@link MessageDTO}
+	 */
+	public List<MessageDTO> getMessages();
 }

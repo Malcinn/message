@@ -55,14 +55,25 @@ public class SimpleMessageDAO implements IMessageDAO {
 			messageToUpdate = messages.get(messageToUpdateIndex.intValue());
 			messageToUpdate.setBody(messageDTO.getBody());
 			messageToUpdate.setTitle(messageDTO.getTitle());
+			return true;
+		} else {
+			throw new MessageNotExistException("Message with id : " + messageDTO.getId() + " not exist.");
 		}
-		throw new MessageNotExistException("Message with id : " + messageDTO.getId() + " not exist.");
+	}
+
+	@Override
+	public List<MessageDTO> getMessages() {
+		List<MessageDTO> returnList = new ArrayList<MessageDTO>();
+		for (Message message : messages) {
+			returnList.add(iMessageAbstractFactory.createMessageDTO(message));
+		}
+		return returnList;
 	}
 
 	public void clean() {
 		messages.clear();
 	}
-	
+
 	public IMessageAbstractFactory getiMessageAbstractFactory() {
 		return iMessageAbstractFactory;
 	}

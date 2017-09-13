@@ -1,7 +1,5 @@
 package com.company.message.dao.model;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
-
 /**
  * Model Class for DAO pattern (DAO - Data Access Object).
  * 
@@ -16,6 +14,17 @@ public class Message {
 	private String title;
 
 	private String body;
+
+	public Message() {
+		super();
+	}
+
+	public Message(String id, String title, String body) {
+		super();
+		this.id = id;
+		this.title = title;
+		this.body = body;
+	}
 
 	public String getId() {
 		return id;
@@ -39,6 +48,11 @@ public class Message {
 
 	public void setBody(String body) {
 		this.body = body;
+	}
+
+	@Override
+	public String toString() {
+		return "[id: " + id + ", title: " + title + ", body: " + body + "]";
 	}
 
 	@Override
